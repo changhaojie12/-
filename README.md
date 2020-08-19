@@ -96,7 +96,8 @@ maven打包或者idea启动服务：
 
 	$ java -jar Webstack-Guns-nkt-1.0.jar
 	
-
+## 启动使用
+后台地址:http://yunchang/housesSysr
   
   
   
