@@ -64,6 +64,7 @@ springmvc.xml配置
 	</bean>
 	<!--配置映射器和适应器 -->
 	<mvc:annotation-driven/>
+	
   
   
   
