@@ -55,6 +55,8 @@ ssm开源的出租管理项目，后期会持续更新框架技术。
 	 <context:component-scan base-package="com.ws"/>
 	 
 springmvc.xml配置
+	
+	
 	<!--自动扫描该包 -->
 	<context:component-scan base-package="com.ws.controller"/>
 	<!--视图解析器 -->
