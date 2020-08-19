@@ -73,30 +73,19 @@ SqlMapConfig.xml配置
 	<configuration>
     		<!--配置pojo的别名-->
     		<typeAliases>
-        	<package name="com.ws.bean"/>
+        		<package name="com.ws.bean"/>
     		</typeAliases>
     
-    	<mappers>
-		<mapper resource="mapper/MyempMapper.xml"/>
-   		<mapper resource="mapper/MycusMapper.xml"/>
-		<mapper resource="mapper/MydeptMapper.xml"/>
-		<mapper resource="mapper/MydjMapper.xml"/>
-		<mapper resource="mapper/MyshouruMapper.xml"/>
-		<mapper resource="mapper/MyzhichuMapper.xml"/>
-		<mapper resource="mapper/MyjsMapper.xml"/>
-		<mapper resource="mapper/MyareaMapper.xml"/>
-		<mapper resource="mapper/MydjsfMapper.xml"/>
-		<mapper resource="mapper/MysortMapper.xml"/>
-		<mapper resource="mapper/MyzcMapper.xml"/>
-		<mapper resource="mapper/MyhtMapper.xml"/>
-		<mapper resource="mapper/mysfMapper.xml"/>
-		<mapper resource="mapper/MybiaoMapper.xml"/>
-		<mapper resource="mapper/MydjtfMapper.xml"/>
-		<mapper resource="mapper/MyhouseMapper.xml"/>
-		<mapper resource="mapper/MybsMapper.xml"/>
-    </mappers>
+    		<mappers>
+			<!--获取方法1:resource -->
+			<mapper resource="mapper/MyempMapper.xml"/>
+			<!--获取方法1:resource -->
+			<mapper class="com.ws.dao.*.xml"/>
+			<!--获取方法1:resource -->
+			<mapper url=""/>
+    		</mappers>
      
-</configuration>
+	</configuration>
 	
   
   
