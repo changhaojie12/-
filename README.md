@@ -87,6 +87,11 @@ SqlMapConfig.xml配置
      
 	</configuration>
 	
+	
+新建数据库
+
+maven打包或者idea启动服务：
+$ java -jar Webstack-Guns-nkt-1.0.jar
   
   
   
