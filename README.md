@@ -10,18 +10,50 @@ ssm开源的出租管理项目，后期会持续更新框架技术。
 
 ## 功能
   ### [业务登录注册]
+  
       基本登录
   ### [房屋基本资料]
-        部门管理
-        岗位信息
-        员工信息
+  
+  部门管理
+  岗位信息
+  员工信息
 
-
-
-
-
-
+## 技术栈
+  
 ## 创建配置
+  ssm配置
+  <!--配置数据源 -->
+	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	 	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<!--	 	<property name="url" value="jdbc:mysql://192.168.6.150:3306/housesdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"/>-->
+		<property name="url" value="jdbc:mysql://localhost:3306/housesdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"/>
+		<property name="username" value="root"/>
+	 	<property name="password" value="123456"/>
+	 </bean>
+	<!--配置sessionFactory -->
+	 <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		 <property name="dataSource" ref="datasource"/>
+		 <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
+	 </bean>
+	<!--自动扫描dao接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!--DAO接口所在包名，spring会自动查找 -->
+		<property name="basePackage" value="com.ws.dao"/>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+	</bean>
+<!--	 -->
+<!--	 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--	 	<property name="basePackage" value="com.ws.dao"></property>-->
+<!--	 	<property name="sqlSessionFactory" ref="sqlSessionFactoryBean"></property>-->
+<!--	 </bean>   -->
+	<!--声明式事务管理 -->
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="datasource"/>
+	</bean>
+	<!--自动扫描，标注springb注解的类自动转化为Bean -->
+	 <context:component-scan base-package="com.ws"/>
+
   
   
   
